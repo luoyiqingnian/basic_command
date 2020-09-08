@@ -1,0 +1,9 @@
+docker exec -it oracle11g bash 
+
+sqlplus /nolog   --登录
+conn /as sysdba  --
+helowin
+chcp 65001
+
+https://www.cnblogs.com/blog-rui/p/11244023.html (docker 相关的命令)
+https://www.cnblogs.com/miracle77hp/articles/11163532.html (git相关的命令)

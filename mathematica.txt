@@ -1,0 +1,436 @@
+、运算符及特殊符号 
+Line1; 执行Line，不显示结果 
+Line1,line2 顺次执行Line1，2，并显示结果 
+?name 关于系统变量name的信息 
+??name 关于系统变量name的全部信息 
+!command 执行Dos命令 
+n! N的阶乘 
+!!filename 显示文件内容 
+< 
+Expr>> filename 打开文件写 
+Expr>>>filename 打开文件从文件末写 
+() 结合率 
+[] 函数 
+{} 一个表 
+<*Math Fun*> 在c语言中使用math的函数 
+(*Note*) 程序的注释 
+#n 第n个参数 
+## 所有参数 
+rule& 把rule作用于后面的式子 
+% 前一次的输出 
+%% 倒数第二次的输出 
+%n 第n个输出
+
+ 
+
+二、系统常数 
+Pi 3.1415....的无限精度数值 
+E 2.17828...的无限精度数值 
+Catalan 0.915966..卡塔兰常数 
+EulerGamma 0.5772....高斯常数 
+GoldenRatio 1.61803...黄金分割数 
+Degree Pi/180角度弧度换算 
+I 复数单位 
+Infinity 无穷大 
+-Infinity 负无穷大 
+ComplexInfinity 复无穷大 
+Indeterminate 不定式 
+三、代数计算 
+Expand[expr] 展开表达式 
+Expand[expr] 展开表达式 
+Factor[expr] 展开表达式 
+Simplify[expr] 化简表达式 
+FullSimplify[expr] 将特殊函数等也进行化简 
+PowerExpand[expr] 展开所有的幂次形式 
+ComplexExpand[expr,{x1,x2...}] 按复数实部虚部展开 
+FunctionExpand[expr] 化简expr中的特殊函数 
+Collect[expr, x] 合并同次项 
+Collect[expr, {x1,x2,...}] 合并x1,x2,...的同次项 
+Together[expr] 通分 
+Apart[expr] 部分分式展开 
+Apart[expr, var] 对var的部分分式展开 
+Cancel[expr] 约分 
+ExpandAll[expr] 展开表达式 
+ExpandAll[expr, patt] 展开表达式 
+FactorTerms[poly] 提出共有的数字因子 
+FactorTerms[poly, x] 提出与x无关的数字因子 
+FactorTerms[poly, {x1,x2...}] 提出与xi无关的数字因子 
+Coefficient[expr, form] 多项式expr中form的系数 
+Coefficient[expr, form, n] 多项式expr中form^n的系数 
+Exponent[expr, form] 表达式expr中form的最高指数 
+Numerator[expr] 表达式expr的分子 
+Denominator[expr] 表达式expr的分母 
+ExpandNumerator[expr] 展开expr的分子部分 
+ExpandDenominator[expr] 展开expr的分母部分 
+TrigExpand[expr] 展开表达式中的三角函数 
+TrigFactor[expr] 给出表达式中的三角函数因子 
+TrigFactorList[expr] 给出表达式中的三角函数因子的表 
+TrigReduce[expr] 对表达式中的三角函数化简 
+TrigToExp[expr] 三角到指数的转化 
+ExpToTrig[expr] 指数到三角的转化 
+RootReduce[expr] 
+ToRadicals[expr]
+
+四、解方程 
+Solve[eqns, vars] 从方程组eqns中解出vars 
+Solve[eqns, vars, elims] 从方程组eqns中削去变量elims,解出vars 
+DSolve[eqn, y, x] 解微分方程，其中y是x的函数 
+DSolve[{eqn1,eqn2,...},{y1,y2...},x]解微分方程组，其中yi是x的函数 
+DSolve[eqn, y, {x1,x2...}] 解偏微分方程 
+Eliminate[eqns, vars] 把方程组eqns中变量vars约去 
+SolveAlways[eqns, vars] 给出等式成立的所有参数满足的条件 
+Reduce[eqns, vars] 化简并给出所有可能解的条件 
+LogicalExpand[expr] 用&&和||将逻辑表达式展开 
+InverseFunction[f] 求函数f的逆函数 
+Root[f, k] 求多项式函数的第k个根 
+Roots[lhs==rhs, var] 得到多项式方程的所有根 
+五、微积分函数 
+D[f, x] 求f[x]的微分 
+D[f, {x, n}] 求f[x]的n阶微分 
+D[f,x1,x2..] 求f[x]对x1,x2...偏微分 
+Dt[f, x] 求f[x]的全微分df/dx 
+Dt[f] 求f[x]的全微分df 
+Dt[f, {x, n}] n阶全微分df^n/dx^n 
+Dt[f,x1,x2..] 对x1,x2..的偏微分 
+Integrate[f, x] f[x]对x在的不定积分 
+Integrate[f, {x, xmin, xmax}] f[x]对x在区间(xmin,xmax)的定积分 
+Integrate[f, {x, xmin, xmax}, {y, ymin, ymax}] f[x,y]的二重积分 
+Limit[expr, x->x0] x趋近于x0时expr的极限 
+Residue[expr, {x,x0}] expr在x0处的留数 
+Series[f, {x, x0, n}] 给出f[x]在x0处的幂级数展开 
+Series[f, {x, x0,nx}, {y, y0, ny}]先对y幂级数展开，再对x 
+Normal[expr] 化简并给出最常见的表达式 
+SeriesCoefficient[series, n] 给出级数中第n次项的系数 
+SeriesCoefficient[series, {n1,n2...}] 
+‘或Derivative[n1,n2...][f] 一阶导数 
+InverseSeries[s, x] 给出逆函数的级数 
+ComposeSeries[serie1,serie2...] 给出两个基数的组合 
+SeriesData[x,x0,{a0,a1,..},nmin,nmax,den]表示一个在x0处x的幂级数 
+? O[x]^n n阶小量x^n 
+O[x, x0]^n n阶小量(x-x0)^n
+
+ 
+
+八、数值函数 
+N[expr] 表达式的机器精度近似值 
+N[expr, n] 表达式的n位近似值，n为任意正整数 
+NSolve[lhs==rhs, var] 求方程数值解 
+NSolve[eqn, var, n] 求方程数值解，结果精度到n位 
+NDSolve[eqns, y, {x, xmin, xmax}]微分方程数值解 
+NDSolve[eqns, {y1,y2,...}, {x, xmin, xmax}] 
+微分方程组数值解 
+FindRoot[lhs==rhs, {x,x0}] 以x0为初值，寻找方程数值解 
+FindRoot[lhs==rhs, {x, xstart, xmin, xmax}] 
+NSum[f, {i,imin,imax,di}] 数值求和，di为步长 
+NSum[f, {i,imin,imax,di}, {j,..},..] 多维函数求和 
+NProduct[f, {i, imin, imax, di}]函数求积 
+NIntegrate[f, {x, xmin, xmax}] 函数数值积分 
+优化函数： 
+FindMinimum[f, {x,x0}] 以x0为初值，寻找函数最小值 
+FindMinimum[f, {x,x0}] 以x0为初值，寻找函数最小值 
+FindMinimum[f, {x, xstart, xmin, xmax}] 
+ConstrainedMin[f,{inequ},{x,y,..}] 
+inequ为线性不等式组，f为x,y..之线性函数，得到最小值及此时的x,y..取值 
+ConstrainedMax[f, {inequ}, {x, y,..}]同上 
+LinearProgramming[c,m,b] 解线性组合c.x在m.x>=b&&x>=0约束下的 
+最小值，x,b,c为向量,m为矩阵 
+LatticeReduce[{v1,v2...}] 向量组vi的极小无关组 
+数据处理： 
+Fit[data,funs,vars]用指定函数组对数据进行最小二乘拟和 
+data可以为{{x1,y1,..f1},{x2,y2,..f2}..}多维的情况 
+emp: Fit[{10.22,12,3.2,9.9}, {1, x, x^2,Sin[x]}, x] 
+Interpolation[data]对数据进行差值, 
+data同上，另外还可以为{{x1,{f1,df11,df12}},{x2,{f2,.}..}指定各阶导数 
+InterpolationOrder默认为3次，可修改 
+ListInterpolation[array]对离散数据插值，array可为n维 
+ListInterpolation[array,{{xmin,xmax},{ymin,ymax},..}] 
+FunctionInterpolation[expr,{x,xmin,xmax}, {y,ymin,ymax},..]
+以对应expr[xi,yi]的为数据进行插值 
+Fourier[list] 对复数数据进行付氏变换 
+InverseFourier[list] 对复数数据进行付氏逆变换 
+Min[{x1,x2...},{y1,y2,...}]得到每个表中的最小值 
+Max[{x1,x2...},{y1,y2,...}]得到每个表中的最大值 
+Select[list, crit] 将表中使得crit为True的元素选择出来 
+Count[list, pattern] 将表中匹配模式pattern的元素的个数 
+Sort[list] 将表中元素按升序排列 
+Sort[list,p] 将表中元素按p[e1,e2]为True的顺序比较list 
+的任两个元素e1,e2,实际上Sort[list]中默认p=Greater 
+集合论： 
+Union[list1,list2..] 表listi的并集并排序 
+Intersection[list1,list2..] 表listi的交集并排序 
+Complement[listall,list1,list2...]从全集listall中对listi的差集
+
+ 
+
+九、虚数函数 
+Re[expr] 复数表达式的实部 
+Im[expr] 复数表达式的虚部 
+Abs[expr] 复数表达式的模 
+Arg[expr] 复数表达式的辐角 
+Conjugate[expr] 复数表达式的共轭 
+十、数的头及模式及其他操作 
+Integer _Integer 整数 
+Real _Real 实数 
+Complex _Complex 复数 
+Rational_Rational 有理数 
+(*注：模式用在函数参数传递中，如MyFun[Para1_Integer,Para2_Real] 
+规定传入参数的类型，另外也可用来判断If[Head[a]==Real,...]*) 
+IntegerDigits[n,b,len] 数字n以b近制的前len个码元 
+RealDigits[x,b,len] 类上 
+FromDigits[list] IntegerDigits的反函数 
+Rationalize[x,dx] 把实数x有理化成有理数，误差小于dx 
+Chop[expr, delta] 将expr中小于delta的部分去掉,dx默认为10^-10 
+Accuracy[x] 给出x小数部分位数,对于Pi,E等为无限大 
+Precision[x] 给出x有效数字位数,对于Pi,E等为无限大 
+SetAccuracy[expr, n] 设置expr显示时的小数部分位数 
+SetPrecision[expr, n] 设置expr显示时的有效数字位数 
+十一、区间函数 
+Interval[{min, max}] 区间[min, max](* Solve[3 x+2==Interval[{-2,5 
+}],x 
+*) 
+IntervalMemberQ[interval, x] x在区间内吗？ 
+IntervalMemberQ[interval1,interval2] 区间2在区间1内吗？ 
+IntervalUnion[intv1,intv2...] 区间的并 
+IntervalIntersection[intv1,intv2...] 区间的交 
+十二、矩阵操作 
+a.b.c 或 Dot[a, b, c] 矩阵、向量、张量的点积 
+Inverse[m] 矩阵的逆 
+Transpose[list] 矩阵的转置 
+Transpose[list,{n1,n2..}]将矩阵list 第k行与第nk列交换 
+Det[m] 矩阵的行列式 
+Eigenvalues[m] 特征值 
+Eigenvectors[m] 特征向量 
+Eigensystem[m] 特征系统，返回{eigvalues,eigvectors} 
+LinearSolve[m, b] 解线性方程组m.x==b 
+NullSpace[m] 矩阵m的零空间，即m.NullSpace[m]==零向量 
+RowReduce[m] m化简为阶梯矩阵 
+Minors[m, k] m的所有k*k阶子矩阵的行列式的值(伴随阵，好像是 
+) 
+MatrixPower[mat, n] 阵mat自乘n次 
+Outer[f,list1,list2..] listi中各个元之间相互组合，并作为f的参数的到 
+的矩 
+? Outer[Times,list1,list2]给出矩阵的外积 
+SingularValues[m] m的奇异值，结果为{u,w,v}, 
+m=Conjugate[Transpose[u]].DiagonalMatrix[w].v 
+PseudoInverse[m] m的广义逆 
+QRDecomposition[m] QR分解 
+SchurDecomposition[m] Schur分解 
+LUDecomposition[m] LU分解
+
+ 
+
+十四、绘图函数 
+二维作图 
+Plot[f,{x,xmin,xmax}] 一维函数f[x]在区间[xmin,xmax]上的函数
+曲 
+? Plot[{f1,f2..},{x,xmin,xmax}] 在一张图上画几条曲线 
+ListPlot[{y1,y2,..}] 绘出由离散点对(n,yn)组成的图 
+ListPlot[{{x1,y1},{x2,y2},..}] 绘出由离散点对(xn,yn)组成的图 
+ParametricPlot[{fx,fy},{t,tmin,tmax}] 由参数方程在参数变化范围内的曲 
+线 
+ParametricPlot[{{fx,fy},{gx,gy},...},{t,tmin,tmax}] 
+在一张图上画多条参数曲线 
+选项： 
+PlotRange->{0,1} 作图显示的值域范围 
+AspectRatio->1/GoldenRatio生成图形的纵横比 
+PlotLabel ->label 标题文字 
+Axes ->{False,True} 分别制定是否画x,y轴 
+AxesLabel->{xlabel,ylabel}x,y轴上的说明文字 
+Ticks->None,Automatic,fun用什么方式画轴的刻度 
+AxesOrigin ->{x,y} 坐标轴原点位置 
+AxesStyle->{{xstyle}, {ystyle}}设置轴线的线性颜色等属性 
+Frame ->True,False 是否画边框 
+FrameLabel ->{xmlabel,ymlabel,xplabel,yplabel} 
+边框四边上的文字 
+FrameTicks同Ticks 边框上是否画刻度 
+GridLines 同Ticks 图上是否画栅格线 
+FrameStyle ->{{xmstyle},{ymstyle}设置边框线的线性颜色等属性 
+ListPlot[data,PlotJoined->True] 把离散点按顺序连线 
+PlotSytle->{{style1},{style2},..}曲线的线性颜色等属性 
+PlotPoints->15 曲线取样点，越大越细致 
+三维作图 
+Plot3D[f,{x,xmin,xmax}, {y,ymin,ymax}] 
+二维函数f[x,y]的空间曲面 
+Plot3D[{f,s}, {x,xmin,xmax}, {y,ymin,ymax}] 
+同上，曲面的染色由s[x,y]值决定 
+ListPlot3D[array,shades]同上，曲面的染色由shades[数据]值决定 
+ParametricPlot3D[{fx,fy,fz},{t,tmin,tmax}] 
+二元数方程在参数变化范围内的曲线 
+ParametricPlot3D[{{fx,fy,fz},{gx,gy,gz},...},{t,tmin,tmax}] 
+多条空间参数曲线 
+选项： 
+ViewPoint ->{x,y,z} 三维视点，默认为{1.3,-2.4,2} 
+Boxed -> True,False 是否画三维长方体边框 
+BoxRatios->{sx,sy,sz} 三轴比例 
+BoxStyle 三维长方体边框线性颜色等属性 
+Lighting ->True 是否染色 
+LightSources->{s1,s2..} si为某一个光源si={{dx,dy,dz},color} 
+color为灯色，向dx,dy,dz方向照射 
+AmbientLight->颜色函数 慢散射光的光源 
+Mesh->True,False 是否画曲面上与x,y轴平行的截面的截线 
+MeshStyle 截线线性颜色等属性 
+MeshRange->{{xmin,xmax}, {ymin,ymax}}网格范围 
+ClipFill->Automatic,None,color,{bottom,top} 
+指定图形顶部、底部超界后所画的颜色 
+Shading ->False,True 是否染色 
+HiddenSurface->True,False 略去被遮住不显示部分的信息 
+等高线 
+ContourPlot[f,{x,xmin,xmax},{y,ymin,ymax}] 
+二维函数f[x,y]在指定区间上的等高线图 
+ListContourPlot[array] 根据二维数组array数值画等高线 
+选项： 
+Contours->n 画n条等高线 
+Contours->{z1,z2,..} 在zi处画等高线 
+ContourShading -> False 是否用深浅染色 
+ContourLines -> True 是否画等高线 
+ContourStyle -> {{style1},{style2},..}等高线线性颜色等属性 
+FrameTicks 同上 
+密度图 
+DensityPlot[f,{x,xmin,xmax},{y,ymin,ymax}] 
+二维函数f[x,y]在指定区间上的密度图 
+ListDensityPlot[array] 同上 
+图形显示 
+Show[graphics,options] 显示一组图形对象，options为选项设置 
+Show[g1,g2...] 在一个图上叠加显示一组图形对象 
+GraphicsArray[{g1,g2,...}]在一个图上分块显示一组图形对象 
+SelectionAnimate[notebook,t]把选中的notebook中的图画循环放映 
+选项：(此处选项适用于全部图形函数) 
+Background->颜色函数 指定绘图的背景颜色 
+RotateLabel -> True 竖着写文字 
+TextStyle 此后输出文字的字体，颜色大小等 
+ColorFunction->Hue等 把其作用于某点的函数值上决定某点的颜色 
+RenderAll->False 是否对遮挡部分也染色 
+MaxBend 曲线、曲面最大弯曲度
+
+ 
+
+十四、绘图函数（续） 
+图元函数 
+Graphics[prim, options] 
+prim为下面各种函数组成的表，表示一个二维图形对象 
+Graphics3D[prim, options] 
+prim为下面各种函数组成的表，表示一个三维图形对象 
+SurfaceGraphics[array, shades]表示一个由array和shade决定的曲面对象 
+ContourGraphics[array]表示一个由array决定的等高线图对象
+DensityGraphics[array]表示一个由array决定的密度图对象 
+以上定义图形对象，可以进行对变量赋值，合并显示等操作，也可以存盘 
+Point[p] p={x,y}或{x,y,z}，在指定位置画点 
+Line[{p1,p2,..}]经由pi点连线 
+Rectangle[{xmin, ymin}, {xmax, ymax}] 画矩形 
+Cuboid[{xmin,ymin,zmin},{xmax,ymax,zmax}]由对角线指定的长方体 
+Polygon[{p1,p2,..}] 封闭多边形 
+Circle[{x,y},r] 画圆 
+Circle[{x,y},{rx,ry}] 画椭圆，rx,ry为半长短轴 
+Circle[{x,y},r,{a1,a2}] 从角度a1～a2的圆弧 
+Disk[{x, y}, r] 填充的园、 衷病⒃ 弧等参数同上 
+Raster[array,ColorFunction->f] 颜色栅格 
+Text[expr,coords] 在坐标coords上输出表达式 
+PostScript["string"] 直接用PostScript图元语言写 
+Scaled[{x,y,..}] 返回点的坐标，且均大于0小于1 
+颜色函数(指定其后绘图的颜色) 
+GrayLevel[level] 灰度level为0~1间的实数 
+RGBColor[red, green, blue] RGB颜色，均为0~1间的实数 
+Hue[h, s, b] 亮度，饱和度等，均为0~1间的实数 
+CMYKColor[cyan, magenta, yellow, black] CMYK颜色 
+其他函数(指定其后绘图的方式) 
+Thickness[r] 设置线宽为r 
+PointSize[d] 设置绘点的大小 
+Dashing[{r1,r2,..}] 虚线一个单元的间隔长度 
+ImageSize->{x, y} 显示图形大小(像素为单位) 
+ImageResolution->r 图形解析度r个dpi 
+ImageMargins->{{left,right},{bottom,top}}四边的空白 
+ImageRotated->False 是否旋转90度显示
+
+ 
+
+十五、流程控制 
+分支 
+If[condition, t, f] 如果condition为True,执行t段，否则f段 
+If[condition, t, f, u] 同上，即非True又非False，则执行u段 
+Which[test1,block1,test2,block2..] 执行第一为True的testi对应的blocki 
+Switch[expr,form1,block1,form2,block2..] 
+执行第一个expr所匹配的formi所对应的blocki段 
+循环 
+Do[expr,{imax}] 重复执行expr imax次 
+Do[expr,{i,imin,imax}, {j,jmin,jmax},...]多重循环 
+While[test, body] 循环执行body直到test为False 
+For[start,test,incr,body]类似于C语言中的for，注意"，"与";"的用法相反 
+examp: For[i=1;t =x,i^2<10,i++,t =t+i;Print[t]] 
+异常控制 
+Throw[value] 停止计算，把value返回给最近一个Catch处理 
+Throw[value, tag] 同上， 
+Catch[expr] 计算expr,遇到Throw返回的值则停止 
+Catch[expr, form] 当Throw[value, tag]中Tag匹配form时停止 
+ 其他控制 
+Return[expr] 从函数返回，返回值为expr 
+Return[ ] 返回值Null 
+Break[ ] 结束最近的一重循环 
+Continue[ ] 停止本次循环，进行下一次循环 
+Goto[tag] 无条件转向Label[Tag]处 
+Label[tag] 设置一个断点 
+Check[expr,failexpr] 计算expr,如果有出错信息产生，则返回failexpr的值 
+Check[expr,failexpr,s1::t1,s2::t2,...]当特定信息产生时则返回failexpr 
+CheckAbort[expr,failexpr]当产生abort信息时放回failexpr 
+Interrupt[ ] 中断运行 
+Abort[ ] 中断运行 
+TimeConstrained[expr,t] 计算expr，当耗时超过t秒时终止 
+MemoryConstrained[expr,b]计算expr，当耗用内存超过b字节时终止运算 
+交互式控制 
+Print[expr1,expr2,...] 顺次输出expri的值 
+examp: Print[ "X=" , X//N , " " ,f[x+1]]; 
+Input[ ] 产生一个输入对话框，返回所输入任意表达式 
+Input["prompt"] 同上，prompt为对话框的提示 
+Pause[n] 运行暂停n秒
+
+ 
+
+十六、函数编程 
+(*函数编程是Mathematica中很有特色也是最灵活的一部分，它充分体现了 *) 
+(*Mathematica的“一切都是表达式”的特点，如果你想使你的Mathematica程 *) 
+(*序快于高级语言,建议你把本部分搞通*) 
+纯函数 
+Function[body]或body& 一个纯函数，建立了一组对应法则，作用到后面的 
+表达 
+Function[x, body] 单自变量纯函数 
+Function[{x1,x2,...},body]多自变量纯函数 
+#，#n 纯函数的第一、第n个自变量 
+## 纯函数的所有自变量的序列 
+examp: #1^#2& [2,3] 返回第一个参数的第二个参数次方 
+映射 
+Map[f,expr]或f/@expr 将f分别作用到expr第一层的每一个元上得到的列表 
+Map[f,expr,level] 将f分别作用到expr第level层的每一个元上 
+Apply[f,expr]或f@@expr 将expr的“头”换为f 
+Apply[f,expr,level] 将expr第level层的“头”换为f 
+MapAll[f,expr]或f//@expr把f作用到expr的每一层的每一个元上 
+MapAt[f,expr,n] 把f作用到expr的第n个元上 
+MapAt[f,expr,{i,j,...}] 把f作用到expr[[{i,j,...}]]元上 
+MapIndexed[f,expr] 类似MapAll,但都附加其映射元素的位置列表 
+Scan[f, expr] 按顺序分别将f作用于expr的每一个元 
+Scan[f,expr,levelspec] 同上，仅作用第level层的元素 
+复合映射 
+Nest[f,expr,n] 返回n重复合函数f[f[...f[expr]...]] 
+NestList[f,expr,n] 返回0重到n重复合函数的列表{expr,f[expr],f[f[ 
+expr 
+]..} 
+FixedPoint[f, expr] 将f复合作用于expr直到结果不再改变,即找到其不 
+定点 
+FixedPoint[f, expr, n] 最多复合n次，如果不收敛则停止 
+FixedPointList[f, expr] 返回各次复合的结果列表 
+FoldList[f,x,{a,b,..}] 返回{x,f[x,a],f[f[x,a],b],..} 
+Fold[f, x, list] 返回FoldList[f,x,{a,b,..}]的最后一个元 
+ComposeList[{f1,f2,..},x]返回{x,f1[x],f2[f1[x]],..}的复合函数列表 
+Distribute[f[x1,x2,..]] f对加法的分配率 
+Distribute[expr, g] 对g的分配率 
+Identity[expr] expr的全等变换 
+Composition[f1,f2,..] 组成复合纯函数f1[f2[..fn[ ]..] 
+Operate[p,f[x,y]] 返回p[f][x, y] 
+Through[p[f1,f2][x]] 返回p[f1[x],f2[x]] 
+Compile[{x1,x2,..},expr]编译一个函数，编译后运行速度可以大大加快 
+Compile[{{x1,t1},{x2,t2}..},expr] 同上，可以制定函数参数类型 
+十七、替换规则 
+lhs->rhs 建立了一个规则，把lhs换为rhs,并求rhs的值 
+lhs:>rhs 同上，只是不立即求rhs的值，知道使用该规则时才求值 
+Replace[expr,rules] 把一组规则应用到expr上，只作用一次 
+expr /. rules 同上 
+expr //.rules 将规则rules不断作用到expr上，直到无法作用为止
+Dispatch[{lhs1->rhs1,lhs2->rhs2,...}]综合各个规则，产生一组优化的规则组
